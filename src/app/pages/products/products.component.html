@@ -1,0 +1,55 @@
+<section id="product">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="productHeading text-center">
+                    <h2 class="mb-3">Exclusive Products</h2>
+
+                    <!-- Search Bar -->
+                    <div class="input-group mb-3">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Search products..."
+                          (input)="searchProducts($event)"
+                        />
+                        <span class="input-group-text">
+                          <i class="fa-solid fa-magnifying-glass fs-5" style="color: #0c0d0d;"></i>
+                        </span>
+                      </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row mt-3">
+                    <div class="col-lg-3 col-md-6" *ngFor="let product of filteredProducts()">
+                        <div class="box-shadow">
+                            <div class="card mt-2">
+                                <img [src]="product.image" class="card-img-top img-fluid" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.title }}</h5>
+                                    <p class="card-text">
+                                        <span class="text-danger fw-semibold me-2">${{ product.price }}</span>
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <span><i class="fa-solid fa-star m-0" style="color: #f1f50f;"></i></span>
+                                            <span><i class="fa-solid fa-star m-0" style="color: #f1f50f;"></i></span>
+                                            <span><i class="fa-solid fa-star-half-stroke m-0" style="color: #f1f50f;"></i></span>
+                                            <span class="text-muted">(25)</span>
+                                        </div>
+                                    </div>
+
+                                    <i class="fa fa-cart-plus" (click)="addToCart(product)"></i> Add to Cart
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- No products found message -->
+                <p *ngIf="filteredProducts().length === 0" class="text-center mt-3 text-danger">
+                    No products found.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,9 @@
+.input-group-text {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .input-group .fa-magnifying-glass {
+    font-size: 1.2rem; /* Adjust size if needed */
+    color: #0c0d0d; /* Icon color */
+  }

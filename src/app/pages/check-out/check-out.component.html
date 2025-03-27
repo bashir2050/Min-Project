@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Checkout</h2>
+  <form (submit)="checkout()">
+    <div class="mb-3">
+      <label>Address</label>
+      <textarea class="form-control" [(ngModel)]="address"  name="address" required ></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label>Payment Method</label>
+      <select class="form-control" [(ngModel)]="paymentMethod" name="paymentMethod">
+        <option value="credit_card">Credit Card</option>
+        <option value="paypal">PayPal</option>
+        <option value="cod">Cash on Delivery</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary w-100">Place Order</button>
+  </form>
+</div>

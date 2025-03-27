@@ -1,0 +1,13 @@
+.about-us {
+    text-align: center;
+    padding: 50px;
+  }
+  
+  .about-us h2 {
+    color: #f54242;
+  }
+  
+  .about-us p {
+    font-size: 18px;
+    color: #333;
+  }
